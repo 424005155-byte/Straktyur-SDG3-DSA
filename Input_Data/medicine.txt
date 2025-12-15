@@ -1,0 +1,6 @@
+Jnepa|Loperamide|450|04:03|Pending
+Jnepa|Sensodyne|250|13:14|Taken
+Jnepa|Biogesic|360|17:40|Pending
+Hpajo|Losartan|200|12:09|Pending
+Hpajo|Bioflu|260|15:30|Pending
+Hpajo|Neozep|380|18:19|Pending
