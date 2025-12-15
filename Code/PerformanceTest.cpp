@@ -9,14 +9,12 @@
 using namespace std;
 using namespace chrono;
 
-// Generate 60 test medicine records
 void generateTestData() {
     ofstream file("medicine.txt");
     for(int i = 1; i <= 60; i++) {
-        int hour = 8 + (i % 12);        // Hours between 8-19
-        int minute = 10 + (i % 50);     // Minutes between 10-59
+        int hour = 8 + (i % 12);        
+        int minute = 10 + (i % 50);     
         
-        // Format as HH:MM with leading zeros
         char timeStr[6];
         sprintf(timeStr, "%02d:%02d", hour, minute);
         
@@ -28,14 +26,12 @@ void generateTestData() {
     cout << "Generated 60 test medicine records.\n";
 }
 
-// Generate test user
 void generateTestUser() {
     ofstream file("users.txt");
     file << "Test User|25|testUser|password123\n";
     file.close();
 }
 
-// Clear data files
 void clearTestData() {
     remove("medicine.txt");
     remove("users.txt");
@@ -45,21 +41,18 @@ void runPerformanceTests() {
     cout << "\n=== PERFORMANCE TEST (60 Records) ===\n";
     cout << "Testing NFR1: All operations under 2 seconds\n\n";
     
-    // Test 1: Load Medicines
     auto start = high_resolution_clock::now();
     loadMedicines();
     auto loadTime = high_resolution_clock::now();
     auto loadDuration = duration_cast<milliseconds>(loadTime - start);
     
-    // Test 2: View Medicines
     start = high_resolution_clock::now();
     viewMedicines("testUser");
     auto viewTime = high_resolution_clock::now();
     auto viewDuration = duration_cast<milliseconds>(viewTime - start);
     
-    // Test 3: Simulate Add Medicine (without user input)
     start = high_resolution_clock::now();
-    // We'll create a medicine directly without cout/cin
+
     Medicine* m = new Medicine{"TestMed", "2 pills", "12:30", "Pending", nullptr};
     Medicine*& head = medicineTable["testUser"];
     if (!head || head->time > m->time) {
@@ -75,13 +68,13 @@ void runPerformanceTests() {
     auto addTime = high_resolution_clock::now();
     auto addDuration = duration_cast<milliseconds>(addTime - start);
     
-    // Test 4: Save Medicines
+
     start = high_resolution_clock::now();
     saveMedicines();
     auto saveTime = high_resolution_clock::now();
     auto saveDuration = duration_cast<milliseconds>(saveTime - start);
     
-    // Display Results
+
     cout << "\n=== TEST RESULTS ===\n";
     cout << "1. Load Medicines (60 records):  " << loadDuration.count() << " ms\n";
     cout << "2. View Medicines (60 records):  " << viewDuration.count() << " ms\n";
@@ -89,7 +82,7 @@ void runPerformanceTests() {
     cout << "4. Save Medicines (61 records): " << saveDuration.count() << " ms\n";
     cout << "=================================\n";
     
-    // NFR1 Validation
+
     bool nfr1Passed = true;
     cout << "\n=== NFR1 VALIDATION ===\n";
     
@@ -129,11 +122,11 @@ void runPerformanceTests() {
     }
 }
 
-// Additional Stress Test with 500 records
+
 void runStressTest() {
     cout << "\n=== STRESS TEST (500 Records) ===\n";
     
-    // Generate 500 records
+
     ofstream file("medicine.txt");
     for(int i = 1; i <= 500; i++) {
         int hour = i % 24;
@@ -163,19 +156,20 @@ void runStressTest() {
 }
 
 int main() {
-    // Setup
+
     clearTestData();
     generateTestUser();
     generateTestData();
     
-    // Run tests
+
     runPerformanceTests();
     runStressTest();
     
-    // Cleanup
+
     clearTestData();
     
     cout << "\nPress Enter to exit...";
     cin.get();
     return 0;
+
 }
