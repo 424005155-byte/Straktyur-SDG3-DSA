@@ -95,6 +95,7 @@ Prevents incomplete or corrupted file saves
 Users can safely exit the application
 All background processes stop when exiting
 
+-------------------------------------------------------
 
 Individual Contributions:
 
@@ -136,7 +137,10 @@ V. Conclusion and Contributions
 
 5.1. Conclusion - BERMIO, CARL
 
+--------------------------------------------------------
+
 CODE: 
+
 Users.h - User.cpp  - PAJO, HARVEY
 
 ReminderTime.h - Reminder.cpp - GONZALES, JAIRON
