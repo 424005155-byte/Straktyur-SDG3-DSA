@@ -94,3 +94,45 @@ Prevents incomplete or corrupted file saves
 
 Users can safely exit the application
 All background processes stop when exiting
+
+
+Individual Contributions:
+
+I. Introduction 
+1.1. Project Overview & UN SDG Target -  PAJO, HARVEY
+1.2. Problem Statement (What real-world problem does the app solve?) - BERMIO, CARL
+
+II. Requirements & Analysis
+2.1. Functional Requirements and Non-Functional Requirements (List of features, e.g., FR1, FR2) - NEPA, JASTINE
+2.2. Data Requirements (Description of input data structure and size) - PAJO, HARVEY
+2.3. Complexity Analysis: Expected Time/Space complexity of the Core Algorithm (justify using Big O notation).- NEPA, JASTINE
+
+III. Design Specification
+3.1. Core Data Structures Used (The Five): NEPA, JASTINE
+For each of the five required DSA concepts, include a section detailing:
+Justification: Why was this specific DSA chosen for its role?
+Implementation Details: How did you implement it (e.g., adjacency list for Graph, array for Heap)?
+
+3.2. Algorithm Flowchart: Include the Flowchart for the system's most complex function (the core algorithm using a Finals concept). NEPA, JASTINE
+3.3. Module Breakdown: Define the custom C++ classes and how they interact.  
+PAJO, HARVEY
+
+IV. Testing and Results (Optional)
+4.1. Test Cases (Provide 2-3 sample tests showing input data and expected/actual output.) 
+GONZALES, JAIRON
+4.2. Performance Test (Prove that NFR1 is met by testing with the 50+ record input.) 
+PAJO, HARVEY
+
+V. Conclusion and Contributions
+5.1. Conclusion - BERMIO, CARL
+
+CODE: 
+Users.h - User.cpp  - PAJO, HARVEY
+ReminderTime.h - Reminder.cpp - GONZALES, JAIRON
+MedicineList.h - MedicineList.cpp - MALDA, KENNETH
+MedicineReminder.h -MedicineReminder.cpp - NEPA, JASTINE
+Main.cpp - BERMIO, CARL
+
+GITHUB CREATION - PAJO, HARVEY
+OVERALL PPT - NEPA, JASTINE, MALDA, KENNETH
+OVERALL WORD - PAJO, HARVEY
